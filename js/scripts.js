@@ -32,3 +32,22 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+var currentMode = 1; //0 is dark 1 is light
+function darkMode() {
+    var r = document.querySelector(':root');
+    r.style.setProperty('--bs-body-color', '#222e3a');
+    r.style.setProperty('--bs-body-bg', '#dee2e6');
+    if (currentMode) {
+        //switch to dark mode
+        r.style.setProperty('--bs-body-color', '#222e3a');
+        r.style.setProperty('--bs-body-bg', '#dee2e6');
+        r.style.setProperty('--bs-gray-400', '#495057');
+        currentMode = 0;
+    } else {
+        //switch to light mode
+        r.style.setProperty('--bs-body-color', '#dee2e6');
+        r.style.setProperty('--bs-body-bg', '#222e3a');
+        r.style.setProperty('--bs-gray-400', '#ced4da');
+        currentMode = 1;
+    }
+} 
